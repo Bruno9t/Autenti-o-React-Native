@@ -1,13 +1,23 @@
+import 'react-native-gesture-handler'
+import {NavigationContainer} from '@react-navigation/native'
+import {AuthProvider} from './src/contexts/auth'
+
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
+import Routes from './src/routes'
+
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer
+    
+    >
+      <AuthProvider>
+        <Routes />
+        <StatusBar style="auto" />
+      </AuthProvider>
+    </NavigationContainer>
   );
 }
 
